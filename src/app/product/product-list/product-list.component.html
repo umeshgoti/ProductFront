@@ -1,0 +1,30 @@
+<div class="row pt-5">
+
+  <div class="col-md-12">
+
+    Product Name <input type="text" (input)="productListService.getProducts()" [(ngModel)]="productListService.searchTextProductName">
+    Product Category <input type="text" (input)="productListService.getProducts()" [(ngModel)]="productListService.searchTextProductCategory">
+
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Cost Price</th>
+            <th>Retail Price</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of productListService.products">
+              <td>{{ product.productName }}</td>
+              <td>{{ product.costPrice }}</td>
+              <td>{{ product.retailPrice }}</td>
+              <td>{{ product.productCategory.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
